@@ -1,0 +1,16 @@
+For Each ribbon As Ribbon In ThisApplication.UserInterfaceManager.Ribbons
+    Logger.Info(vbTab & Ribbon.InternalName)
+    For Each ribbonTab As RibbonTab In Ribbon.RibbonTabs
+        Logger.Info(vbTab & vbTab & RibbonTab.DisplayName & " - " & RibbonTab.InternalName)
+        For Each ribbonPanel As RibbonPanel In RibbonTab.RibbonPanels
+            Logger.Info(vbTab & vbTab & vbTab & RibbonPanel.DisplayName & " - " & RibbonPanel.InternalName)
+        Next
+    Next
+Next
+
+Dim loggerWindow = ThisApplication.UserInterfaceManager.
+    DockableWindows.
+    Cast(Of DockableWindow).
+    Where(Function(d) d.InternalName.Equals("ilogic.logwindow")).
+    First()
+loggerWindow.Visible = True
