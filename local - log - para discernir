@@ -1,0 +1,624 @@
+INFO| 1: >>---------------------------
+INFO|	ZeroDoc
+INFO|		Tools - id_TabTools
+INFO|			Options - id_PanelP_ToolsOptions
+INFO|			Content Center - id_PanelZ_ToolsContentCenter
+INFO|			iLogic - iLogic.RibbonPanel
+INFO|			Web - id_PanelP_ToolsWebTools
+INFO|			Team Web - id_PanelP_ToolsTeamweb
+INFO|			Tutorials - Tools-Tutorials
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Add-Ins - id_AddInsTab
+INFO|			Drawing Tools - DrawingToolsToolbarIntName
+INFO|		Inventor Debug - id_InventorDebugTab
+INFO|		Collaborate - id_OnlineTab
+INFO|			Share - id_Panel_OnlineDocument
+INFO|			Load - id_DataExchange_Import
+INFO|			 - id_PanelP_ShowPanels
+INFO|	Part
+INFO|		Sheet Metal - id_TabSheetMetal
+INFO|			Sketch - id_PanelP_Model2DSketchCreate
+INFO|			Create - id_PanelP_SheetMetalCreate
+INFO|			Modify - id_PanelP_SheetMetalModify
+INFO|			Work Features - id_PanelA_ModelWorkFeatures
+INFO|			Pattern - id_PanelP_SheetMetalPattern
+INFO|			Setup - id_PanelP_SheetMetalManage
+INFO|			Flat Pattern - id_PanelP_SheetMetalManageUnfold
+INFO|			Parameters - id_PanelP_ToolsParameters
+INFO|			Measure - id_PanelP_ToolsMeasure
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Flat Pattern - id_TabFlatPattern
+INFO|			Sketch - id_PanelP_Model2DSketchCreate
+INFO|			Create - id_PanelP_FlatPatternCreate
+INFO|			Modify - id_PanelP_FlatPatternModify
+INFO|			Work Features - id_PanelA_ModelWorkFeatures
+INFO|			Pattern - id_PanelP_FlatPatternPattern
+INFO|			Insert - id_PanelP_FlatPatternInsert
+INFO|			Manage - id_PanelP_FlatPatternManage
+INFO|			Folded Part - id_PanelP_FlatPatternExit
+INFO|			 - id_PanelP_ShowPanels
+INFO|		3D Model - id_TabModel
+INFO|			Sketch - id_PanelP_Model2DSketchCreate
+INFO|			Primitives - id_PanelP_ModelPrimitives
+INFO|			Create - id_PanelP_ModelCreate
+INFO|			Modify - id_PanelP_ModelModify
+INFO|			Explore - id_PanelP_ModelExplore
+INFO|			Work Features - id_PanelA_ModelWorkFeatures
+INFO|			Pattern - id_PanelP_ModelPattern
+INFO|			Create Freeform - id_PanelP_FreeformCreate
+INFO|			Surface - id_PanelP_ModelSurface
+INFO|			Simplification - Simplification:PartSimplifyPanel
+INFO|			Parameters - id_PanelP_ToolsParameters
+INFO|			Plastic Part - id_PanelP_PlasticPart
+INFO|			Measure - id_PanelP_ToolsMeasure
+INFO|			Insert - id_PanelP_ToolsInsert
+INFO|			Harness - id_PanelP_ModelHarness
+INFO|			iPart/iAssembly - id_PanelA_AssembleIPartIAssembly
+INFO|			Simulation - id_PanelP_AnalysisFEA
+INFO|			Convert - id_PanelP_ConvertSheetMetal
+INFO|			3D Print - id_PanelP_3DPrint
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Sketch - id_TabSketch
+INFO|			Sketch - id_PanelP_Model2DSketchCreate
+INFO|			Create - id_PanelP_2DSketchDraw
+INFO|			Modify - id_PanelP_2DSketchModify
+INFO|			Pattern - id_PanelP_2DSketchPattern
+INFO|			Constrain - id_PanelP_2DSketchConstrain
+INFO|			Layout - id_PanelP_2DSketchLayout
+INFO|			Insert - id_PanelA_2DSketchInsert
+INFO|			Format - id_PanelP_2DSketchFormat
+INFO|			Parameters - id_PanelP_ToolsParameters
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Annotate - id_TabAdskMBD
+INFO|			Geometric Annotation - id_PanelAdskMBDGeometricAnno
+INFO|			General Annotation - id_PanelAdskMBDGeneralAnno
+INFO|			Notes - id_PanelAdskMBDNotes
+INFO|			Manage - id_PanelAdskMBDManage
+INFO|			Analyze - id_PanelAdskMBDAnalyze
+INFO|			Export - id_PanelAdskMBDExport
+INFO|		Inspect - id_TabInspect
+INFO|			Measure - id_PanelP_AnalysisMeasure
+INFO|			Analyze - id_PanelP_ToolsAnalysis
+INFO|			AutoLimits - id_PanelP_ToolsAutoLimits
+INFO|			Parameters - id_PanelP_ToolsParameters
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Tools - id_TabTools
+INFO|			Begin - id_PanelP_ToolsEnvironments
+INFO|			Measure - id_PanelP_ToolsMeasure
+INFO|			Material and Appearance - id_PanelP_ToolsMaterial
+INFO|			Options - id_PanelP_ToolsOptions
+INFO|			Clipboard - id_PanelP_ToolsClipboard
+INFO|			Find - id_PanelP_ToolsFind
+INFO|			Team Web - id_PanelP_ToolsTeamweb
+INFO|			Attributes - Attributes
+INFO|			Tutorials - Tools-Tutorials
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Manage - id_TabManage
+INFO|			Update - id_PanelP_ToolsUpdate
+INFO|			Parameters - id_PanelP_ToolsParameters
+INFO|			Manage - id_PanelP_Manage
+INFO|			Styles and Standards - id_PanelP_ToolsStylesAndStandards
+INFO|			Insert - id_PanelP_ToolsInsert
+INFO|			Point Cloud - id_PanelP_ToolsPointCloud
+INFO|			Layout - id_PanelP_ToolsLayout
+INFO|			Author - id_PanelP_ToolsAuthor
+INFO|			iLogic - iLogic.RibbonPanel
+INFO|			Content Center - id_PanelP_ToolsContentCenter
+INFO|			 - id_PanelP_ShowPanels
+INFO|		View - id_TabView
+INFO|			Visibility - id_PanelP_ViewVisibility
+INFO|			Appearance - id_PanelA_ViewAppearance
+INFO|			Windows - id_PanelP_ViewWindow
+INFO|			Navigate - id_PanelC_ViewNavigate
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Environments - id_TabEnvironments
+INFO|			Begin - id_Panel_EnvironmentsBegin
+INFO|			Convert - id_PanelP_ConvertSheetMetal
+INFO|			3D Print - id_PanelP_3DPrint
+INFO|			Manage - id_PanelP_EnvironmentsAddIns
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Add-Ins - id_AddInsTab
+INFO|			Drawing Tools - DrawingToolsToolbarIntName
+INFO|		Collaborate - id_OnlineTab
+INFO|			Share - id_Panel_OnlineDocument
+INFO|			Web - id_PanelP_ToolsWebTools
+INFO|			Data Management - id_PanelP_PDMAndPLM
+INFO|			Load - id_DataExchange_Import
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Fusion - id_TabMFGInterop
+INFO|			Generative Design - id_panelGenerative
+INFO|			Simulation - id_panelSimulation
+INFO|			Manufacture - id_panelManufacturing
+INFO|			Design - id_panelDesign
+INFO|		Exit 2D Sketch - id_TabSketch_Exit
+INFO|			Exit - id_PanelP_2DSketchExit
+INFO|		3D Sketch - id_Tab3DSketch
+INFO|			Draw - id_PanelP_3DSketchDraw
+INFO|			Constrain - id_PanelP_3DSketchConstrain
+INFO|			Pattern - id_PanelP_3DSketchPattern
+INFO|			Modify - id_PanelP_3DSketchModify
+INFO|			Insert - id_PanelP_3DSketchInsert
+INFO|			Format - id_PanelP_3DSketchFormat
+INFO|			Work Features - id_PanelA_ModelWorkFeatures
+INFO|			Parameters - id_PanelP_ToolsParameters
+INFO|		Exit 3D Sketch - id_Tab3DSketch_Exit
+INFO|			Exit - id_PanelP_3DSketchExit
+INFO|		Construction - id_TabConstruction
+INFO|			Manage - id_PanelP_ConstructionManage
+INFO|			Surface - id_PanelP_ConstructionSurface
+INFO|		Exit Construction - id_TabConstruction_Exit
+INFO|			Exit - id_PanelP_ConstructionExit
+INFO|		Edit Base Solid - id_TabEditBaseSolid
+INFO|			Modify - id_PanelP_ExplicitModify
+INFO|			Work Features - id_PanelA_ModelWorkFeatures
+INFO|		Exit Base Solid - id_TabEditBaseSolid_Exit
+INFO|			Exit - id_PanelP_ExplicitExit
+INFO|		Repair - id_TabSurfaceRepair
+INFO|			Repair - id_PanelP_SurfaceRepairRepair
+INFO|			Modify - id_PanelP_SurfaceRepairModify
+INFO|		Exit Repair - id_TabSurfaceRepair_Exit
+INFO|			Exit - id_PanelP_SurfaceRepairExit
+INFO|		Exit - id_TabTSpline_Exit
+INFO|			Exit - id_PanelP_TSplineExit
+INFO|		Route - id_TabRoute
+INFO|			Create - id_PanelP_RouteCreate
+INFO|			Constrain - id_PanelP_RouteConstrain
+INFO|			Manage - id_PanelP_RouteManage
+INFO|			Parameters - id_PanelP_ToolsParameters
+INFO|		Exit Route - id_TabRoute_Exit
+INFO|			Exit - id_PanelP_RouteExit
+INFO|		Render - id_TabRender
+INFO|			Render - id_PanelP_StudioRender
+INFO|			Scene - id_PanelP_StudioScene
+INFO|			Animate - id_PanelP_StudioAnimate
+INFO|			Manage - id_PanelP_StudioManage
+INFO|		Exit Studio - id_TabRender_Exit
+INFO|			Exit - id_PanelP_StuidoExit
+INFO|		Exit Stress Analysis - id_TabStressAnalysis_Exit
+INFO|			Exit - id_PanelP_StressAnalysisExit
+INFO|		Analysis - id_TabAFEA
+INFO|			Manage - id_PanelA_AFEAManage
+INFO|			Material - id_PanelA_AFEAMaterial
+INFO|			Prepare - id_PanelA_AFEAPrepare
+INFO|			Constraints - id_PanelA_AFEAConstraints
+INFO|			Loads - id_PanelA_AFEALoads
+INFO|			Goals and Criteria - id_PanelA_AFEAGoalsCriteria
+INFO|			Contacts - id_PanelA_AFEAContacts
+INFO|			Mesh - id_PanelA_AFEAMesh
+INFO|			Run - id_PanelA_AFEARun
+INFO|			Solve - id_PanelA_AFEASolve
+INFO|			Result - id_PanelA_AFEAResult
+INFO|			Display - id_PanelA_AFEAResultDisplay
+INFO|			Export - id_PanelA_AFEAExport
+INFO|			Report - id_PanelA_AFEAReport
+INFO|			Guide - id_PanelA_AFEAGuide
+INFO|			Settings - id_PanelA_AFEASettings
+INFO|		Exit Stress Analysis - id_TabAFEA_Exit
+INFO|			Exit - id_PanelP_AFEAExit
+INFO|		Return - id_TabReturn
+INFO|			Return - id_PanelP_PartReturn
+INFO|		Inventor Debug - id_InventorDebugTab
+INFO|		3D Print - id_TabPrint3D
+INFO|			Locate - id_PanelA_3DPrintPosition
+INFO|			Modify - id_PanelB_3DPrintPosition
+INFO|			Work Features - id_PanelA_ModelWorkFeatures
+INFO|			Print - id_PanelC_3DPrintPosition
+INFO|		Freeform - id_TabTSpline
+INFO|			Create Freeform - id_PanelP_FreeformCreate
+INFO|			Edit - id_PanelP_FreeformEdit
+INFO|			Modify - id_PanelP_FreeformModify
+INFO|			Symmetry - id_PanelP_FreeformSymmetry
+INFO|			Check - id_PanelP_FreeformCheck
+INFO|			Tools - id_PanelP_FreeformTools
+INFO|			Work Features - id_PanelA_ModelWorkFeatures
+INFO|		Exit 3D Print - id_TabPrint3D_Exit
+INFO|			Exit - id_PanelP_3DPrintExit
+INFO|		3D Annotation - id_Tab3DA
+INFO|			Dimension - id_PanelP_3DADIM
+INFO|		BIM Content - id_TabAECExchange
+INFO|			MEP Connectors - id_PanelA_AECExchangeConnectors
+INFO|			Author - id_PanelA_AECExchangeAuthor
+INFO|			Publish - id_PanelA_AECExchangePublish
+INFO|	Assembly
+INFO|		Mold Layout - MoldTabLayout
+INFO|			Mold Layout - MoldPanelLayout
+INFO|			Runners and Channels - MoldPanelRunnerChannel
+INFO|			Mold Simulation - MoldPanelSimulation
+INFO|			Tools - MoldPanelTools
+INFO|		Core/Cavity - MoldTabCoreCavity
+INFO|			Plastic Part - MoldPanelPlasticPart
+INFO|			Parting Design - MoldPanelPartingDesign
+INFO|			Insert - MoldPanelInsert
+INFO|			Tools - MoldPanelTools
+INFO|		Mold Assembly - MoldTabMoldBase
+INFO|			Mold Assembly - MoldPanelStandardComponents
+INFO|			Boolean - MoldPanelMoldBoolean
+INFO|			2-D Drawing - MoldPanel2DDrawing
+INFO|			Author - MoldPanelAuthor
+INFO|		Assemble - id_TabAssemble
+INFO|			Component - id_PanelA_AssembleComponent
+INFO|			Position - id_PanelA_AssemblePosition
+INFO|			Relationships - id_PanelA_AssembleRelationships
+INFO|			Pattern - id_PanelA_AssemblePattern
+INFO|			Manage - id_PanelA_AssembleManage
+INFO|			Appearance - id_PanelA_Appearance
+INFO|			iPart/iAssembly - id_PanelA_AssembleIPartIAssembly
+INFO|			Productivity - id_PanelA_AssembleAssemblyTools
+INFO|			Work Features - id_PanelA_ModelWorkFeatures
+INFO|			Simplification - id_PanelAssm_Simplification
+INFO|			Measure - id_PanelA_ToolsMeasure
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Design - id_TabDesign
+INFO|			Fasten - id_PanelA_DesignFasten
+INFO|			Frame - id_PanelA_DesignFrame
+INFO|			Power Transmission - id_PanelA_DesignPowerTransmission
+INFO|			Spring - id_PanelA_DesignSpring
+INFO|			Measure - id_PanelA_ToolsMeasure
+INFO|			Analyze - id_PanelP_ToleranceAnalyze
+INFO|			 - id_PanelP_ShowPanels
+INFO|		3D Model - id_TabModel
+INFO|			Sketch - id_PanelA_ModelSketch
+INFO|			Modify Assembly - id_PanelA_ModelModify
+INFO|			Work Features - id_PanelA_ModelWorkFeatures
+INFO|			Pattern - id_PanelA_ModelPattern
+INFO|			Parameters - id_PanelA_ModelManage
+INFO|			Measure - id_PanelA_ToolsMeasure
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Sketch - id_TabSketch
+INFO|			Sketch - id_PanelA_ModelSketch
+INFO|			Create - id_PanelA_2DSketchDraw
+INFO|			Modify - id_PanelA_2DSketchModify
+INFO|			Pattern - id_PanelA_2DSketchPattern
+INFO|			Constrain - id_PanelA_2DSketchConstrain
+INFO|			Insert - id_PanelA_2DSketchInsert
+INFO|			Format - id_PanelA_2DSketchFormat
+INFO|			Measure - id_PanelA_ToolsMeasure
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Annotate - id_TabAdskMBD
+INFO|			General Annotation - id_PanelAdskMBDGeneralAnno
+INFO|			Notes - id_PanelAdskMBDNotes
+INFO|			Manage - id_PanelAdskMBDManage
+INFO|			Analyze - id_PanelAdskMBDAnalyze
+INFO|			Export - id_PanelAdskMBDExport
+INFO|		Weld - id_TabWeld
+INFO|			Process - id_PanelA_WeldProcess
+INFO|			Weld - id_PanelA_WeldWeld
+INFO|			Sketch - id_PanelA_WeldSketch
+INFO|			Preparation and Machining - id_PanelA_WeldModify
+INFO|			Work Features - id_PanelA_ModelWorkFeatures
+INFO|			Pattern - id_PanelA_WeldPattern
+INFO|			Parameters - id_PanelA_WeldManage
+INFO|			Measure - id_PanelA_ToolsMeasure
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Weld Return to Parent - id_TabWeld_ReturnParent
+INFO|			Return - id_PanelA_WeldReturnToParent
+INFO|		Inspect - id_TabInspect
+INFO|			Interference - id_PanelA_ToolsAnalysis
+INFO|			Analyze - id_PanelP_ToleranceAnalyze
+INFO|			Measure - id_PanelA_AnalysisMeasure
+INFO|			AutoLimits - id_PanelA_ToolsAutoLimits
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Tools - id_TabTools
+INFO|			Measure - id_PanelA_ToolsMeasure
+INFO|			Material and Appearance - id_PanelP_ToolsMaterial
+INFO|			Options - id_PanelP_ToolsOptions
+INFO|			Clipboard - id_PanelP_ToolsClipboard
+INFO|			Find - id_PanelP_ToolsFind
+INFO|			Team Web - id_PanelP_ToolsTeamweb
+INFO|			Attributes - Attributes
+INFO|			Tutorials - Tools-Tutorials
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Manage - id_TabManage
+INFO|			Update - id_PanelA_ToolsUpdate
+INFO|			Manage - id_PanelA_AssembleManage
+INFO|			Styles and Standards - id_PanelA_ToolsStylesAndStandards
+INFO|			Insert - id_PanelA_ToolsInsert
+INFO|			Point Cloud - id_PanelP_ToolsPointCloud
+INFO|			Author - id_PanelA_ToolsAuthor
+INFO|			iLogic - iLogic.RibbonPanel
+INFO|			Content Center - id_PanelA_ToolsContentCenter
+INFO|			 - id_PanelP_ShowPanels
+INFO|		View - id_TabView
+INFO|			Visibility - id_PanelA_ViewVisibility
+INFO|			Appearance - id_PanelA_ViewAppearance
+INFO|			Windows - id_PanelP_ViewWindow
+INFO|			Navigate - id_PanelC_ViewNavigate
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Environments - id_TabEnvironments
+INFO|			Begin - id_Panel_EnvironmentsBegin
+INFO|			Convert - id_PanelA_ConvertWeld
+INFO|			3D Print - id_PanelP_3DPrint_Legacy
+INFO|			Manage - id_PanelA_EnvironmentsAddIns
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Add-Ins - id_AddInsTab
+INFO|			Drawing Tools - DrawingToolsToolbarIntName
+INFO|			User Commands - Assembly.id_AddInsTab.UserCommands
+INFO|		Collaborate - id_OnlineTab
+INFO|			Share - id_Panel_OnlineDocument
+INFO|			Web - id_PanelP_ToolsWebTools
+INFO|			Load - id_DataExchange_Import
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Electromechanical - id_TabMechatronics
+INFO|			Setup - id_PanelA_Mechatronics
+INFO|		Fusion - id_TabMFGInterop
+INFO|			Generative Design - id_panelGenerative
+INFO|			Simulation - id_panelSimulation
+INFO|			Manufacture - id_panelManufacturing
+INFO|			Design - id_panelDesign
+INFO|		Exit 2D Sketch - id_TabSketch_Exit
+INFO|			Exit - id_PanelA_2DSketchExit
+INFO|		Mode - id_TabExpressMode
+INFO|			Express - id_PanelA_AssembleExpress
+INFO|		Tube and Pipe - id_TabTube_Pipe
+INFO|			Run - id_PanelA_TubePipeRoute
+INFO|			Content - id_PanelA_TubePipeContentCenter
+INFO|			Component - id_PanelA_TubePipeComponent
+INFO|			Position - id_PanelA_TubePipePosition
+INFO|			Relationships - id_PanelA_TubePipeRelationships
+INFO|			Manage - id_PanelA_TubePipeManage
+INFO|			Parameters - id_PanelP_ToolsParameters
+INFO|			iPart/iAssembly - id_PanelA_TubePipeIPartIAssembly
+INFO|		Exit Tube and Pipe - id_TabTube_Pipe_Exit
+INFO|			Exit - id_PanelA_TubePipeExit
+INFO|		Pipe Run - id_TabTube_Pipe_Run
+INFO|			Route - id_PanelA_TubePipeRunCreate
+INFO|			Content - id_PanelA_TubePipeRunContentCenter
+INFO|			Manage - id_PanelA_TubePipeRunManage
+INFO|			Parameters - id_PanelP_ToolsParameters
+INFO|		Exit Tube and Pipe Run - id_TabTube_Pipe_Run_Exit
+INFO|			Exit - id_PanelA_TubePipeRunExit
+INFO|		Cable and Harness - id_TabCable_Harness
+INFO|			Create - id_PanelA_CableHarnessCreate
+INFO|			Route - id_PanelA_CableHarnessRoute
+INFO|			Manage - id_PanelA_CableHarnessManage
+INFO|			Visibility - id_PanelA_CableHarnessVisibility
+INFO|		Exit Cable and Harness - id_TabCable_Harness_Exit
+INFO|			Exit - id_PanelA_CableHarnessExit
+INFO|		Render - id_TabRender
+INFO|			Render - id_PanelA_StudioRender
+INFO|			Scene - id_PanelA_StudioScene
+INFO|			Animate - id_PanelA_StudioAnimate
+INFO|			Manage - id_PanelA_StudioManage
+INFO|		Exit Studio - id_TabRender_Exit
+INFO|			Exit - id_PanelA_StudioExit
+INFO|		Dynamic Simulation - id_TabSimulation
+INFO|			Joint - id_PanelA_SimulationJoint
+INFO|			Load - id_PanelA_SimulationLoad
+INFO|			Results - id_PanelA_SimulationResults
+INFO|			Animate - id_PanelA_SimulationAnimate
+INFO|			Manage - id_PanelA_SimulationMaterial
+INFO|			Stress Analysis - id_PanelA_SimulationExport
+INFO|		Exit Dynamic Simulation - id_TabSimulation_Exit
+INFO|			Exit - id_PanelA_SimulationExit
+INFO|		Return - id_TabReturn
+INFO|			Return - id_PanelA_AssmReturn
+INFO|		Analysis - id_TabAFEA
+INFO|			Manage - id_PanelA_AFEAManage
+INFO|			Material - id_PanelA_AFEAMaterial
+INFO|			Prepare - id_PanelA_AFEAPrepare
+INFO|			Constraints - id_PanelA_AFEAConstraints
+INFO|			Loads - id_PanelA_AFEALoads
+INFO|			Goals and Criteria - id_PanelA_AFEAGoalsCriteria
+INFO|			Contacts - id_PanelA_AFEAContacts
+INFO|			Mesh - id_PanelA_AFEAMesh
+INFO|			Run - id_PanelA_AFEARun
+INFO|			Solve - id_PanelA_AFEASolve
+INFO|			Result - id_PanelA_AFEAResult
+INFO|			Display - id_PanelA_AFEAResultDisplay
+INFO|			Export - id_PanelA_AFEAExport
+INFO|			Report - id_PanelA_AFEAReport
+INFO|			Guide - id_PanelA_AFEAGuide
+INFO|			Settings - id_PanelA_AFEASettings
+INFO|		Exit Stress Analysis - id_TabAFEA_Exit
+INFO|			Exit - id_PanelA_AFEAExit
+INFO|		Frame Analysis - id_TabIFA
+INFO|			Manage - id_PanelA_IFAManage
+INFO|			Beams - id_PanelA_IFAProperties
+INFO|			Constraints - id_PanelA_IFAConstraints
+INFO|			Loads - id_PanelA_IFA_Loads
+INFO|			Connections - id_PanelA_IFA_Connections
+INFO|			Solve - id_PanelA_IFA_Solve
+INFO|			Result - id_PanelA_IFA_Result
+INFO|			Display - id_PanelA_IFA_Display
+INFO|			Publish - id_PanelA_IFA_Publish
+INFO|			Settings - id_PanelA_IFA_Settings
+INFO|		Exit Frame Analysis - id_TabIFA_Exit
+INFO|			Exit - id_PanelA_IFAExit
+INFO|		Inventor Debug - id_InventorDebugTab
+INFO|		BIM Content - id_TabAECExchange
+INFO|			Simplify - id_PanelA_AECExchangeSimplify
+INFO|			MEP Connectors - id_PanelA_AECExchangeConnectors
+INFO|			Author - id_PanelA_AECExchangeAuthor
+INFO|			Publish - id_PanelA_AECExchangePublish
+INFO|	Drawing
+INFO|		Place Views - id_TabPlaceViews
+INFO|			Create - id_PanelD_PlaceViewsCreate
+INFO|			Modify - id_PanelD_PlaceViewsModify
+INFO|			Sketch - id_PanelD_Annotate2DSketchCreate
+INFO|			Sheets - id_PanelD_PlaceViewsSheets
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Annotate - id_TabAnnotate
+INFO|			Dimension - id_PanelD_AnnotateDimension
+INFO|			Feature Notes - id_PanelD_AnnotateFeatureNotes
+INFO|			Text - id_PanelD_AnnotateText
+INFO|			Symbols - id_PanelD_AnnotateSymbols
+INFO|			Retrieve - id_PanelD_AnnotateRetrieve
+INFO|			Sketch - id_PanelD_Annotate2DSketchCreate
+INFO|			Table - id_PanelD_AnnotateTable
+INFO|			Revision - id_PanelD_AnnotateRevision
+INFO|			Format - id_PanelD_AnnotateFormat
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Annotate (ESKD) - id_TabAnnotateESKD
+INFO|			Drawing Sheets - id_PanelD_ESKDDrawingSheets
+INFO|			Dimension - id_PanelD_ESKDAnnotateDimension
+INFO|			Feature Notes - id_PanelD_ESKDAnnotateFeatureNotes
+INFO|			Text - id_PanelD_ESKDAnnotateText
+INFO|			Symbols - id_PanelD_ESKDAnnotateSymobols
+INFO|			Retrieve - id_PanelD_ESKDAnnotateRetrieve
+INFO|			Sketch - id_PanelD_ESKD2DSketchCreate
+INFO|			Table - id_PanelD_ESKDAnnotateTable
+INFO|			Revision - id_PanelD_ESKDAnnotateRevision
+INFO|			Format - id_PanelD_ESKDAnnotateFormat
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Sketch - id_TabSketch
+INFO|			Sketch - id_PanelD_Annotate2DSketchCreate
+INFO|			Create - id_PanelD_2DSketchDraw
+INFO|			Modify - id_PanelD_2DSketchModify
+INFO|			Pattern - id_PanelD_2DSketchPattern
+INFO|			Constrain - id_PanelD_2DSketchConstrain
+INFO|			Insert - id_PanelA_2DSketchInsert
+INFO|			Format - id_PanelD_2DSketchFormat
+INFO|			Measure - id_PanelD_ToolsMeasure
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Tools - id_TabTools
+INFO|			Measure - id_PanelD_ToolsMeasure
+INFO|			Options - id_PanelP_ToolsOptions
+INFO|			Clipboard - id_PanelP_ToolsClipboard
+INFO|			Team Web - id_PanelP_ToolsTeamweb
+INFO|			Attributes - Attributes
+INFO|			Tutorials - Tools-Tutorials
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Manage - id_TabManage
+INFO|			Update - id_PanelP_ToolsUpdate
+INFO|			Parameters - id_PanelP_ToolsParameters
+INFO|			Styles and Standards - id_PanelD_ToolsStylesAndStandards
+INFO|			Insert - id_PanelA_ToolsInsert
+INFO|			Modify - id_Panel_ToolsModify
+INFO|			Define - id_PanelD_ToolsDefine
+INFO|			iLogic - iLogic.RibbonPanel
+INFO|			Content Center - id_PanelD_ToolsContentCenter
+INFO|			Web - id_PanelP_ToolsWebTools
+INFO|			 - id_PanelP_ShowPanels
+INFO|		View - id_TabView
+INFO|			Windows - id_PanelP_ViewWindow
+INFO|			Navigate - id_PanelD_ViewNavigate
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Environments - id_TabEnvironments
+INFO|			Begin - id_Panel_EnvironmentsBegin
+INFO|			Manage - id_PanelD_EnvironmentsAddIns
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Nailboard - id_TabNailboard
+INFO|			Create - id_PanelD_NailboardCreate
+INFO|			Edit - id_PanelD_NailboardEdit
+INFO|			Dimension - id_PanelD_NailboardDimension
+INFO|			Manage - id_PanelD_NailboardManage
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Add-Ins - id_AddInsTab
+INFO|			Drawing Tools - DrawingToolsToolbarIntName
+INFO|		Collaborate - id_OnlineTab
+INFO|			Share - id_Panel_OnlineDocument
+INFO|			Data Management - id_PanelP_PDMAndPLM
+INFO|			Load - id_DataExchange_Import
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Exit 2D Sketch - id_TabSketch_Exit
+INFO|			Exit - id_PanelD_2DSketchExit
+INFO|		Exit Nailboard Sketch - id_TabNailboard_Exit
+INFO|			Exit - id_PanelD_NailboardExit
+INFO|		Review - id_TabReview
+INFO|			Navigate - id_PanelD_ReviewNavigate
+INFO|			Create - id_PanelD_ReviewCreate
+INFO|			Measure - id_PanelD_ReviewMeasure
+INFO|			Print - id_PanelD_ReviewPrint
+INFO|			Sheets - id_PanelD_PlaceViewsSheets
+INFO|		Exit Review - id_TabNailboard_Review
+INFO|			Exit - id_PanelD_ReviewExit
+INFO|		Return - id_TabReturn
+INFO|			Return - id_PanelD_DrawingReturn
+INFO|		Inventor Debug - id_InventorDebugTab
+INFO|	Presentation
+INFO|		Presentation - id_TabManage
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Edit View - id_TabEditView
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Exit - id_TabEditView_Exit
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Tools - id_TabTools
+INFO|			Options - id_PanelP_ToolsOptions
+INFO|			Clipboard - id_PanelP_ToolsClipboard
+INFO|			Styles and Standards - id_PanelPn_ToolsStylesAndStandards
+INFO|			Insert - id_PanelPn_ToolsManage
+INFO|			Content Center - id_PanelPn_ToolsContentCenter
+INFO|			Web - id_PanelP_ToolsWebTools
+INFO|			Team Web - id_PanelP_ToolsTeamweb
+INFO|			Attributes - Attributes
+INFO|			Tutorials - Tools-Tutorials
+INFO|			 - id_PanelP_ShowPanels
+INFO|		View - id_TabView
+INFO|			Appearance - id_PanelA_ViewAppearance
+INFO|			Windows - id_PanelP_ViewWindow
+INFO|			Navigate - id_PanelC_ViewNavigate
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Environments - id_TabEnvironments
+INFO|			Begin - id_Panel_EnvironmentsBegin
+INFO|			Manage - id_PanelD_EnvironmentsAddIns
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Add-Ins - id_AddInsTab
+INFO|			Drawing Tools - DrawingToolsToolbarIntName
+INFO|		Return - id_TabReturn
+INFO|			Return - id_PanelPn_PnReturnPanel
+INFO|		Inventor Debug - id_InventorDebugTab
+INFO|		Collaborate - id_OnlineTab
+INFO|			Share - id_Panel_OnlineDocument
+INFO|			Data Management - id_PanelP_PDMAndPLM
+INFO|			Load - id_DataExchange_Import
+INFO|			 - id_PanelP_ShowPanels
+INFO|	iFeatures
+INFO|		iFeature - id_TabiFeature
+INFO|			iFeature - id_PaneliF_iFeaturesIFeature
+INFO|		Tools - id_TabTools
+INFO|			Options - id_PanelP_ToolsOptions
+INFO|			Find - id_PanelP_ToolsFind
+INFO|			Insert - id_PanelPn_ToolsInsert
+INFO|			Content Center - id_PaneliF_ToolsContentCenter
+INFO|			Web - id_PanelP_ToolsWebTools
+INFO|			Team Web - id_PanelP_ToolsTeamweb
+INFO|			Attributes - Attributes
+INFO|			Tutorials - Tools-Tutorials
+INFO|			 - id_PanelP_ShowPanels
+INFO|		View - id_TabView
+INFO|			Appearance - id_PaneliF_ViewAppearance
+INFO|			Windows - id_PanelP_ViewWindow
+INFO|			Navigate - id_PanelC_ViewNavigate
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Environments - id_TabEnvironments
+INFO|			Begin - id_Panel_EnvironmentsBegin
+INFO|			Manage - id_PanelD_EnvironmentsAddIns
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Add-Ins - id_AddInsTab
+INFO|			Drawing Tools - DrawingToolsToolbarIntName
+INFO|		Inventor Debug - id_InventorDebugTab
+INFO|		Collaborate - id_OnlineTab
+INFO|			Share - id_Panel_OnlineDocument
+INFO|			Data Management - id_PanelP_PDMAndPLM
+INFO|			Load - id_DataExchange_Import
+INFO|			 - id_PanelP_ShowPanels
+INFO|	UnknownDocument
+INFO|		Custom View - id_TabCustomView
+INFO|			Navigate - id_PanelU_CustomViewNavigate
+INFO|			Appearance - id_PanelU_CustomViewAppearance
+INFO|			Exit - id_PanelU_CustomViewExit
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Engineer's Notebook - id_TabEngineersNotebook
+INFO|			Notes - id_PanelU_EngineersNotebookNotes
+INFO|			Format - id_PanelU_EngineersNotebookFormat
+INFO|			Insert - id_PanelU_EngineersNotebookInsert
+INFO|			Exit - id_PanelU_NotebookExit
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Tools - id_TabEngineersNotebookTools
+INFO|			Options - id_PanelP_ToolsOptions
+INFO|			Clipboard - id_PanelP_ToolsClipboard
+INFO|			Content Center - id_PanelU_ToolsContentCenter
+INFO|			Web - id_PanelP_ToolsWebTools
+INFO|			Team Web - id_PanelP_ToolsTeamweb
+INFO|			 - id_PanelP_ShowPanels
+INFO|		View - id_TabEngineersNotebookView
+INFO|			Appearance - id_PanelU_ViewAppearance
+INFO|			Windows - id_PanelP_ViewWindow
+INFO|			Navigate - id_PanelC_ViewNavigate
+INFO|			 - id_PanelP_ShowPanels
+INFO|		Inventor Debug - id_InventorDebugTab
+INFO|		Collaborate - id_OnlineTab
+INFO|			Share - id_Panel_OnlineDocument
+INFO|			Data Management - id_PanelP_PDMAndPLM
+INFO|			Load - id_DataExchange_Import
+INFO|			 - id_PanelP_ShowPanels
