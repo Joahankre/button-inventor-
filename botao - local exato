@@ -1,0 +1,293 @@
+Imports Inventor
+Imports System.Runtime.InteropServices
+Imports System.Windows.Forms
+Imports System.Linq
+
+<Guid("bd2ec21a-725f-415f-826e-309a6ed74dde"), ComVisible(True)>
+Public Class StandardAddInServer
+    Implements ApplicationAddInServer
+
+    Private m_inventorApp As Inventor.Application
+    Private WithEvents m_button As ButtonDefinition
+    Private m_uiEvents As UserInterfaceEvents
+
+    ' Ativação do AddIn
+    Public Sub Activate(addInSiteObject As ApplicationAddInSite, firstTime As Boolean) Implements ApplicationAddInServer.Activate
+        m_inventorApp = addInSiteObject.Application
+        m_uiEvents = m_inventorApp.UserInterfaceManager.UserInterfaceEvents
+        AddHandler m_uiEvents.OnResetRibbonInterface, AddressOf HandleResetRibbonInterface
+        AddButtonToRibbon()
+    End Sub
+
+    ' Evento disparado quando a Ribbon é reiniciada
+    Private Sub HandleResetRibbonInterface(Context As NameValueMap)
+        AddButtonToRibbon()
+    End Sub
+
+    ' Propriedade para automação (usada por iLogic)
+    Public ReadOnly Property Automation As Object Implements ApplicationAddInServer.Automation
+        Get
+            Return Me
+        End Get
+    End Property
+
+    ' Desativação do AddIn
+    Public Sub Deactivate() Implements ApplicationAddInServer.Deactivate
+        RemoveButtonFromRibbon()
+
+        If m_uiEvents IsNot Nothing Then
+            RemoveHandler m_uiEvents.OnResetRibbonInterface, AddressOf HandleResetRibbonInterface
+            m_uiEvents = Nothing
+        End If
+
+        m_inventorApp = Nothing
+    End Sub
+
+    ' Método obrigatório pela interface
+    Public Sub ExecuteCommand(commandID As Integer) Implements ApplicationAddInServer.ExecuteCommand
+        ' Não utilizado
+    End Sub
+
+    ' Adiciona o botão no Ribbon da aba Assembly
+    Private Sub AddButtonToRibbon()
+        Try
+            Dim controlDefs As ControlDefinitions = m_inventorApp.CommandManager.ControlDefinitions
+
+            Dim buttonInternalName As String = "ItemNumberSyncAddIn.ItemNumberSyncButton"
+            Dim buttonDisplayName As String = "Sincronizar Item Numbers"
+            Dim buttonTooltip As String = "Sincroniza os Item Numbers nas submontagens"
+            Dim clientId As String = "ItemNumberSyncAddIn"
+
+            ' Cria o botão se ainda não existir
+            m_button = TryCast(controlDefs.Item(buttonInternalName), ButtonDefinition)
+            If m_button Is Nothing Then
+                m_button = controlDefs.AddButtonDefinition(buttonDisplayName, buttonInternalName, CommandTypesEnum.kNonShapeEditCmdType, clientId, buttonTooltip, buttonTooltip)
+            End If
+
+            ' Obtem a aba 'Montagem'
+            Dim ribbon As Ribbon = m_inventorApp.UserInterfaceManager.Ribbons("Assembly")
+            Dim tab As RibbonTab = ribbon.RibbonTabs.Item("id_TabAssemble")
+
+            ' Obtem o painel 'Administrar'
+            Dim panel As RibbonPanel = tab.RibbonPanels.Item("id_PanelA_AssembleManage")
+
+            ' Verifica se botão já está presente
+            Dim exists As Boolean = panel.CommandControls.Cast(Of CommandControl)().Any(Function(c) c.ControlDefinition.InternalName = m_button.InternalName)
+            If Not exists Then
+                panel.CommandControls.AddButton(m_button, True)
+            End If
+
+            ' Adiciona evento
+            AddHandler m_button.OnExecute, AddressOf Button_OnExecute
+
+        Catch ex As Exception
+            MessageBox.Show("Erro ao adicionar botão ao painel existente: " & ex.Message)
+        End Try
+    End Sub
+
+    ' Remove o botão ao desativar
+    Private Sub RemoveButtonFromRibbon()
+        Try
+            If m_button Is Nothing Then Return
+
+            Dim ribbon As Ribbon = m_inventorApp.UserInterfaceManager.Ribbons("Assembly")
+            Dim tab As RibbonTab = ribbon.RibbonTabs("id_TabAssemble")
+
+            For Each panel As RibbonPanel In tab.RibbonPanels
+                If panel.InternalName = "ItemNumberSyncGroup" Then
+                    For Each ctrl As CommandControl In panel.CommandControls
+                        If ctrl.ControlDefinition.InternalName = m_button.InternalName Then
+                            ctrl.Delete()
+                            Exit For
+                        End If
+                    Next
+
+                    If panel.CommandControls.Count = 0 Then
+                        panel.Delete()
+                    End If
+                End If
+            Next
+
+            RemoveHandler m_button.OnExecute, AddressOf Button_OnExecute
+            m_button = Nothing
+
+        Catch
+            ' Silenciar erro
+        End Try
+    End Sub
+
+    ' Evento do botão
+    Private Sub Button_OnExecute(Context As NameValueMap)
+        Try
+            Sincronizar()
+        Catch ex As Exception
+            MessageBox.Show("Erro ao executar sincronização: " & ex.Message)
+        End Try
+    End Sub
+
+    ' Método principal de sincronização
+    <ComVisible(True)>
+    Public Sub Sincronizar()
+        Dim doc As Document = m_inventorApp.ActiveDocument
+        If doc Is Nothing OrElse doc.DocumentType <> DocumentTypeEnum.kAssemblyDocumentObject Then
+            MessageBox.Show("Abra uma montagem antes de executar a sincronização.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        Dim asmDoc As AssemblyDocument = CType(doc, AssemblyDocument)
+        Dim raizDisplayName As String = asmDoc.DisplayName
+
+        Dim mapaGlobal As New List(Of Tuple(Of String, String, String))()
+
+        Try
+            Dim bom As BOM = asmDoc.ComponentDefinition.BOM
+            bom.StructuredViewEnabled = True
+            bom.StructuredViewFirstLevelOnly = False
+
+            Dim view = bom.BOMViews.Cast(Of BOMView)().FirstOrDefault(Function(v) v.ViewType = BOMViewTypeEnum.kStructuredBOMViewType)
+            If view Is Nothing Then
+                MessageBox.Show("Nenhum item encontrado no BOM estruturado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Return
+            End If
+
+            For Each row As BOMRow In view.BOMRows
+                AdicionarAoMapaRecursivo(row, mapaGlobal, asmDoc.DisplayName)
+            Next
+
+        Catch ex As Exception
+            MessageBox.Show("Erro ao gerar mapa BOM: " & ex.Message)
+            Return
+        End Try
+
+        SincronizarSubmontagensRecursivo(asmDoc, mapaGlobal, raizDisplayName)
+
+        Dim textoRelatorio As String = FormatarMapaParaTexto(mapaGlobal)
+        ShowFormattedResults(textoRelatorio)
+
+        MessageBox.Show("Sincronização concluída com sucesso! A montagem principal foi preservada.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    Private Sub AdicionarAoMapaRecursivo(row As BOMRow, mapa As List(Of Tuple(Of String, String, String)), parentPath As String)
+        Try
+            If row.ComponentDefinitions.Count = 0 Then Exit Sub
+
+            Dim compDef As ComponentDefinition = row.ComponentDefinitions.Item(1)
+
+            ' Evita componentes virtuais ou sem documento
+            If compDef Is Nothing OrElse compDef.Document Is Nothing Then Exit Sub
+            If TypeOf compDef Is VirtualComponentDefinition Then Exit Sub
+
+            Dim doc As Document = compDef.Document
+            Dim partNumber As String = doc.PropertySets.Item("Design Tracking Properties").Item("Part Number").Value.ToString()
+            Dim itemNumber As String = row.ItemNumber
+            Dim caminho As String = parentPath & "\" & doc.DisplayName
+
+            If Not String.IsNullOrEmpty(partNumber) AndAlso Not String.IsNullOrEmpty(itemNumber) Then
+                mapa.Add(Tuple.Create(partNumber, itemNumber, caminho))
+            End If
+
+            If row.ChildRows IsNot Nothing Then
+                For Each child In row.ChildRows
+                    AdicionarAoMapaRecursivo(child, mapa, caminho)
+                Next
+            End If
+
+        Catch
+            ' Silencia erro — não exibe MessageBox para cada item
+        End Try
+    End Sub
+
+    ' Recursivo para sincronizar submontagens
+    Private Sub SincronizarSubmontagensRecursivo(asm As AssemblyDocument, mapaGlobal As List(Of Tuple(Of String, String, String)), raizDisplayName As String)
+        Try
+            For Each occ As ComponentOccurrence In asm.ComponentDefinition.Occurrences
+                If occ.DefinitionDocumentType = DocumentTypeEnum.kAssemblyDocumentObject Then
+                    Dim subDoc As Document
+                    Try
+                        subDoc = m_inventorApp.Documents.Item(occ.Definition.Document.FullFileName)
+                    Catch
+                        subDoc = m_inventorApp.Documents.Open(occ.Definition.Document.FullFileName, False)
+                    End Try
+
+                    Dim subAsm As AssemblyDocument = TryCast(subDoc, AssemblyDocument)
+                    If subAsm Is Nothing Then Continue For
+
+                    Dim subPath As String = raizDisplayName & "\" & subAsm.DisplayName
+                    SincronizarItemNumbers(mapaGlobal, subAsm, subPath)
+
+                    Try
+                        subAsm.Save2(True)
+                    Catch
+                        ' Ignorar erro ao salvar
+                    End Try
+
+                    SincronizarSubmontagensRecursivo(subAsm, mapaGlobal, raizDisplayName)
+                End If
+            Next
+        Catch
+            ' Ignorar erros
+        End Try
+    End Sub
+
+    ' Atualiza os Item Numbers com base no mapa
+    Private Sub SincronizarItemNumbers(mapaGlobal As List(Of Tuple(Of String, String, String)), asm As AssemblyDocument, subPath As String)
+        Try
+            Dim bom As BOM = asm.ComponentDefinition.BOM
+            bom.StructuredViewEnabled = True
+            bom.StructuredViewFirstLevelOnly = True
+
+            Dim view = bom.BOMViews.Cast(Of BOMView)().FirstOrDefault(Function(v) v.ViewType = BOMViewTypeEnum.kStructuredBOMViewType)
+            If view Is Nothing Then Return
+
+            For Each row As BOMRow In view.BOMRows
+                If row.ComponentDefinitions.Count = 0 Then Continue For
+
+                Dim doc As Document = row.ComponentDefinitions.Item(1).Document
+                Dim partNumber As String = doc.PropertySets.Item("Design Tracking Properties").Item("Part Number").Value.ToString()
+
+                Dim item = mapaGlobal.FirstOrDefault(Function(t) t.Item1 = partNumber AndAlso subPath.StartsWith(t.Item3))
+
+                If item IsNot Nothing AndAlso row.ItemNumber <> item.Item2 Then
+                    row.ItemNumber = item.Item2
+                End If
+            Next
+        Catch ex As Exception
+            MessageBox.Show("Erro ao sincronizar '" & asm.DisplayName & "': " & ex.Message)
+        End Try
+    End Sub
+
+    ' Formata o resultado da sincronização
+    Private Function FormatarMapaParaTexto(mapa As List(Of Tuple(Of String, String, String))) As String
+        Dim sb As New System.Text.StringBuilder()
+        Dim col1Width As Integer = 70
+        Dim col2Width As Integer = 30
+
+        sb.AppendLine("PART NUMBER".PadRight(col1Width) & "ITEM NUMBER".PadRight(col2Width) & "CAMINHO HIERÁRQUICO")
+        sb.AppendLine(New String("-"c, col1Width + col2Width + 70))
+
+        For Each item In mapa
+            sb.AppendLine(item.Item1.PadRight(col1Width) & item.Item2.PadRight(col2Width) & item.Item3)
+        Next
+
+        Return sb.ToString()
+    End Function
+
+    ' Exibe janela com o resultado da sincronização
+    Private Sub ShowFormattedResults(message As String)
+        Dim form As New Form With {
+            .Text = "Developed by Kreimeir & Machado - RESULTADO DA SINCRONIZAÇÃO ",
+            .Width = 1000,
+            .Height = 600
+        }
+
+        Dim richText As New RichTextBox With {
+            .Dock = DockStyle.Fill,
+            .ReadOnly = True
+        }
+
+        richText.AppendText("MAPA DE SINCRONIZAÇÃO:" & vbCrLf & vbCrLf & message)
+        form.Controls.Add(richText)
+        form.ShowDialog()
+    End Sub
+
+End Class
